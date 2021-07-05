@@ -1,0 +1,186 @@
+body {
+    font-family: 'Open Sans', sans-serif
+}
+
+.card {
+    background: #fff
+}
+
+.faint {
+    color: #fafafa
+}
+
+.profile.card {
+    overflow-x: hidden
+}
+
+.container {
+    margin-bottom: 100px;
+}
+
+.avatar {
+    display: block;
+    height: 100px;
+    margin: 30px auto 0 auto;
+    width: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    border-radius: 100px
+}
+
+.email {
+    font-size: 24px;
+    margin: 30px -40px 30px 0;
+    text-align: center
+}
+
+.email span {
+    color: #6495ED
+}
+
+.social {
+    font-size: 1.2em
+}
+
+.social ul {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+.social li {
+    overflow: hidden;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.social a {
+    color: inherit
+}
+
+.social a svg,
+.social a i {
+    display: inline-block;
+    width: 1em !important
+}
+
+.social .facebook {
+    color: #3b5998
+}
+
+.social .github {
+    color: #333
+}
+
+.social .instagram {
+    color: #F56040
+}
+
+.social .linkedin {
+    color: #007bb6
+}
+
+.social .tumblr {
+    color: #32506d
+}
+
+.social .twitter {
+    color: #00aced
+}
+
+.social.first li {
+    text-align: right
+}
+
+.social.first li i {
+    display: block;
+    float: right;
+    margin-top: 3px;
+    margin-left: 3px
+}
+
+nav {
+    display: none
+}
+
+nav .navbar-brand {
+    padding-top: 5px;
+    padding-bottom: 5px
+}
+
+nav .navbar-brand img {
+    height: 40px;
+    width: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    border-radius: 40px
+}
+
+body.show-nav a.anchor {
+    display: block;
+    position: relative;
+    top: -70px
+}
+
+body.show-nav nav {
+    display: block
+}
+
+.works .skills {
+    float: left;
+    font-size: 0.7em;
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+.works .skills li {
+    display: inline-block
+}
+
+.works .skills li .name:after {
+    content: ','
+}
+
+.works .skills li:last-child .name:after {
+    content: ''
+}
+
+.works .thumbnail>* {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.works h3,
+.works .skills {
+    white-space: nowrap
+}
+
+.works h3 {
+    line-height: 1.3em;
+    margin-bottom: 0
+}
+
+.works p {
+    height: 5em
+}
+
+.skills .name {
+    text-align: left
+}
+
+.skills .rating i {
+    display: inline-block;
+    text-align: center;
+    width: 1.1em
+}
+
+.qr {
+    margin: 20px 0;
+    text-align: center
+}
