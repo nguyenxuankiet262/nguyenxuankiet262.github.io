@@ -1839,7 +1839,7 @@ h4 {
 
 .main-timeline7 .timeline:nth-child(2n) .year:before {
     left: auto;
-    right: 3px
+    right: 4px
 }
 
 .main-timeline7 .timeline:nth-child(2n) .year:after {
