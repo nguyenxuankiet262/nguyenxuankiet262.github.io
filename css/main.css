@@ -1,3 +1,42 @@
+
+.chip {
+    display: inline-block;
+    padding: 0 15px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    border-radius: 20px;
+    background-color: #eee;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to bottom, #f7f7f7, #e5e5e5);
+    transition: all 0.3s ease-in-out;
+    background-clip: padding-box;
+    background-image: linear-gradient(to bottom, #f7f7f7, #e5e5e5);
+    user-select: none;
+    margin: 8px;
+
+  }
+
+  .chip img {
+    float: left;
+    margin: 0 10px 0 -15px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+  }
+
+  .chip span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .chip:hover {
+    background-color: #ccc;
+    transform: scale(1.1);
+
+  }
+
 @keyframes float {
     0% {
         box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
