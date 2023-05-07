@@ -34,19 +34,6 @@
 
   }
 
-  .chip img {
-    float: left;
-    margin: 0 10px 0 -15px;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-  }
-
-  .chip span {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
 
   .chip:hover {
     background-color: #ccc;
