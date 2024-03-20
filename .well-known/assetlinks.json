@@ -5,7 +5,8 @@
       "namespace": "android_app",
       "package_name": "com.hitek",
       "sha256_cert_fingerprints": [
-        "A1:7A:47:C2:CB:61:0E:16:A4:4F:B8:04:78:4A:A6:60:71:42:2E:C2:CC:20:76:19:58:D9:07:E7:91:BA:F9:E3"
+        "A1:7A:47:C2:CB:61:0E:16:A4:4F:B8:04:78:4A:A6:60:71:42:2E:C2:CC:20:76:19:58:D9:07:E7:91:BA:F9:E3",
+        "FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C"
       ]
     }
   }
