@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Jitsi Meeting</title>
+    <script src="https://meet.itchcmc.vn/external_api.js"></script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: black;
+        }
+
+        #jitsi-container {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="jitsi-container"></div>
+
+    <script>
+        const domain = "meet.itchcmc.vn";
+        const options = {
+            roomName: "68899a8732120014b48c1444",
+            width: "100%",
+            height: "100%",
+            parentNode: document.querySelector("#jitsi-container"),
+            jwt: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJrX2NoYXQiLCJhdWQiOiJodHRwczovL21lZXQuaXRjaGNtYy52biIsInN1YiI6Imh0dHBzOi8vbWVldC5pdGNoY21jLnZuIiwiY29udmVyc2F0aW9uSWQiOiI2ODg5OWE4NzMyMTIwMDE0YjQ4YzE0NDQiLCJleHAiOjE3NTQyODQ2MzgsIm5iZiI6MTc1NDI4MTAzOCwicm9vbSI6IjY4ODk5YTg3MzIxMjAwMTRiNDhjMTQ0NCIsImNvbnRleHQiOnsidXNlciI6eyJpZCI6IjY4ODg3ZTA1ZjVkZDQzZWEyM2NkZGFlYSIsIm5hbWUiOiJraWtpIiwiZW1haWwiOm51bGwsImF2YXRhciI6bnVsbCwiYWZmaWxpYXRpb24iOiJtZW1iZXIifSwiZmVhdHVyZXMiOnsiY2hhdCI6dHJ1ZSwic2NyZWVuc2hhcmUiOnRydWUsImxvYmJ5Ijp0cnVlfX0sImlhdCI6MTc1NDI4MTAzOH0.GJEAfiFMaY4zD4XEX4fhMj_3ENBhe-wS2Kl9HOuqNVQ",
+            userInfo: {
+                displayName: "kiki",
+                email: "",
+
+            },
+            configOverwrite: {
+                startWithVideoMuted: true,
+                startWithAudioMuted: false,
+
+                // Feature flags - enabled features
+                resolution: 720,
+                audioFocusDisabled: true,
+                audioMuteButtonEnabled: true,
+                audioOnlyButtonEnabled: true,
+                speakerStatsEnabled: true,
+                filmstripEnabled: true,
+                fullScreenEnabled: true,
+                tileViewEnabled: true,
+                videoMuteEnabled: true,
+                pipEnabled: true,
+
+                // Feature flags - disabled features
+                welcomePageEnabled: false,
+                addPeopleEnabled: false,
+                calenderEnabled: false,
+                callIntegrationEnabled: false,
+                carModeEnabled: false,
+                closeCaptionsEnabled: false,
+                conferenceTimerEnabled: false,
+                chatEnabled: false,
+                helpButtonEnabled: false,
+                inviteEnabled: false,
+                androidScreenSharingEnabled: false,
+                kickOutEnabled: false,
+                liveStreamingEnabled: false,
+                lobbyModeEnabled: false,
+                meetingNameEnabled: false,
+                meetingPasswordEnabled: false,
+                notificationEnabled: false,
+                overflowMenuEnabled: false,
+                pipWhileScreenSharingEnabled: false,
+                preJoinPageEnabled: false,
+                raiseHandEnabled: false,
+                reactionsEnabled: false,
+                recordingEnabled: false,
+                replaceParticipant: false,
+                securityOptionEnabled: false,
+                serverUrlChangeEnabled: false,
+                iosRecordingEnabled: false,
+                iosScreenSharingEnabled: false,
+                unsafeRoomWarningEnabled: false,
+                disableDeepLinking: true,
+                deeplinking: {
+                    disabled: true,
+                },
+                prejoinConfig: {
+                    enabled: false,
+                }
+            },
+            interfaceConfigOverwrite: {
+                TOOLBAR_BUTTONS: ["microphone", "camera", "hangup"],
+                SHOW_JITSI_WATERMARK: false,
+                SHOW_WATERMARK_FOR_GUESTS: false,
+                MOBILE_APP_PROMO: false
+            }
+        };
+
+        const api = new JitsiMeetExternalAPI(domain, options);
+        window.api = api;
+
+        api.addEventListener("videoConferenceJoined", (event) => {
+            console.log("Conference joined", event);
+            if (window.flutter_inappwebview) {
+                window.flutter_inappwebview.callHandler("onConferenceJoined", event);
+            }
+        });
+
+        api.addEventListener("readyToClose", () => {
+            console.log("Ready to close");
+            if (window.flutter_inappwebview) {
+                window.flutter_inappwebview.callHandler("onCallEnded");
+            }
+        });
+
+        api.addEventListener("participantJoined", (event) => {
+            console.log("Participant joined", event);
+            if (window.flutter_inappwebview) {
+                window.flutter_inappwebview.callHandler("onParticipantJoined", event);
+            }
+        });
+
+        api.addEventListener("participantLeft", (event) => {
+            console.log("Participant left", event);
+            if (window.flutter_inappwebview) {
+                window.flutter_inappwebview.callHandler("onParticipantLeft", event);
+            }
+        });
+
+        api.addEventListener("conferenceTerminated", () => {
+            console.log("Conference terminated");
+            if (window.flutter_inappwebview) {
+                window.flutter_inappwebview.callHandler("onCallTerminated");
+            }
+        });
+
+    </script>
+</body>
+
+</html>
